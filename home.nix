@@ -51,6 +51,7 @@ in
 
     discord
     qbittorrent
+    unzip
     protonvpn-gui
     neovim
     bitwarden
@@ -75,6 +76,7 @@ in
     nomacs
     darktable
     protonup-qt
+    tor-browser
     # home-manager
     signal-desktop
     rustup
@@ -204,6 +206,28 @@ in
         };
       };
     };
+
+    librewolf = {
+      enable = true;
+      package = pkgs.librewolf;
+
+      # about:config changes
+      settings = {
+        "webgl.disabled" = false;
+        "privacy.resistFingerprinting" = true;
+        "privacy.resistFingerprinting.letterboxing" = true;
+        "privacy.clearOnShutdown.history" = false;
+        "privacy.clearOnShutdown.downloads " = false;
+        "middlemouse.paste" = false;
+        "security.OCSP.require" = false;
+        "accessibility.browsewithcaret" = true;
+        "browser.safebrowsing.downloads.remote.enabled" = false;
+        "browser.safebrowsing.downloads.remote.block_potentially_unwanted" = false;
+        "findbar.highlightAll" = true;
+        "network.captive-portal-service.enabled" = true;
+      };
+    };
+
   };
 
   services = {
