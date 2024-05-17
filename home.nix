@@ -52,6 +52,7 @@ in
     discord
     qbittorrent
     unzip
+    xfce.thunar
     neovim
     bitwarden
     bitwarden-cli
@@ -232,6 +233,13 @@ in
         "findbar.highlightAll" = true;
         "network.captive-portal-service.enabled" = true;
       };
+    };
+
+    tmux = {
+      enable = true;
+      clock24 = true;
+      newSession = true;
+      shell = "${pkgs.zsh}/bin/zsh";
     };
 
   };
