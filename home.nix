@@ -52,7 +52,6 @@ in
     discord
     qbittorrent
     unzip
-    protonvpn-gui
     neovim
     bitwarden
     bitwarden-cli
@@ -76,7 +75,6 @@ in
     nomacs
     darktable
     protonup-qt
-    tor-browser
     # home-manager
     signal-desktop
     rustup
