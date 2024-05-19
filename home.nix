@@ -124,13 +124,19 @@ in
   programs = {
     zsh = {
       enable = true;
-      # autosuggestion.enable = true;
       shellAliases = myAliases;
+      initExtra = ''
+        if [ -z "$TMUX"]; then
+          tmux a
+        fi
+      '';
 
       history = {
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
       };
+
+      syntaxHighlighting.enable = true;
 
       zplug = {
         enable = true;
