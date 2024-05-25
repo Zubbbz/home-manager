@@ -6,6 +6,7 @@ let
     updatehm = "home-manager switch";
     garbcol = "sudo nix-collect-garbage";
     reloadd = "sudo systemctl --user daemon-reload";
+    cat = "bat";
   };
   fontFamily = "Sauce Code Pro Nerd Font";
 in
@@ -156,7 +157,7 @@ in
       userName = "Zubbbz";
       userEmail = "37497090+Zubbbz@users.noreply.github.com";
       signing.signByDefault = true;
-      signing.key = "";
+      signing.key = "/home/nathan/.ssh/keys/Git.pub";
       extraConfig = {
         gpg.format = "ssh";
         init.defaultBranch = "main";
