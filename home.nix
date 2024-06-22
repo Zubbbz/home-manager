@@ -83,6 +83,7 @@ in
     gcc
     go
     bat
+    libreoffice-still
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -252,6 +253,7 @@ in
   };
 
   services = {
+    easyeffects.enable = true;
     gpg-agent = {
       enable = true;
       enableSshSupport = true;
