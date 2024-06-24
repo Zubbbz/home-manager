@@ -68,7 +68,7 @@ in
     obsidian
     mpv
     v2raya
-    neofetch
+    fastfetch
     ripgrep
     thefuck
     alacritty
@@ -77,13 +77,14 @@ in
     nomacs
     darktable
     protonup-qt
-    # home-manager
     signal-desktop
     rustup
     gcc
     go
     bat
     libreoffice-still
+    ungoogled-chromium
+    go2tv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -190,7 +191,7 @@ in
         window = {
           dimensions = {
             columns = 80;
-            lines = 24;
+            lines = 25;
           };
           opacity = 0.8;
           blur = true;
@@ -230,7 +231,7 @@ in
       settings = {
         "webgl.disabled" = false;
         "privacy.resistFingerprinting" = true;
-        "privacy.resistFingerprinting.letterboxing" = true;
+        "privacy.resistFingerprinting.letterboxing" = false;
         "privacy.clearOnShutdown.history" = false;
         "privacy.clearOnShutdown.downloads " = false;
         "middlemouse.paste" = false;
