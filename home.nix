@@ -3,7 +3,8 @@ let
   myAliases = {
     ll = "ls -aF";
     rebuildsys = "sudo nixos-rebuild switch -I nixos-config=/home/nathan/projects/nixos-config/hosts/thinker/configuration.nix";
-    updatehm = "home-manager switch";
+    drybuildsys = "nixos-rebuild dry-build -I nixos-config=/home/nathan/projects/nixos-config/hosts/thinker/configuration.nix";
+    updatehm = "home-manager switch --flake /home/nathan/.config/home-manager/";
     garbcol = "sudo nix-collect-garbage";
     reloadd = "sudo systemctl --user daemon-reload";
     cat = "bat";
