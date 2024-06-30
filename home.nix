@@ -85,7 +85,7 @@ in
     bat
     libreoffice-still
     ungoogled-chromium
-    go2tv
+    smuview
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -128,12 +128,20 @@ in
   programs = {
     zsh = {
       enable = true;
+
+      enableCompletion = true;
+
       shellAliases = myAliases;
-      initExtra = ''
-        if [ -z "$TMUX"]; then
-          tmux a
-        fi
-      '';
+       initExtra = ''
+       source ~/.nix-profile/share/git/contrib/completion/git-prompt.sh
+       setopt PROMPT_SUBST
+       PS1='[%n@%m %~]$(__git_ps1 " (%s) ")%# '
+       tmux a
+       clear
+       fastfetch
+       '';
+
+      autocd = true;
 
       history = {
         size = 10000;
@@ -148,11 +156,6 @@ in
           { name = "zsh-users/zsh-autosuggestions"; }
         ];
       };
-
-    };
-
-    starship = {
-      enable = true;
     };
 
     git = {
